@@ -14,6 +14,13 @@
     </div>
 
   <% end %>
+  
+  <div class="field">
+    <%= form.label :category, class: "label" %>
+    <div class="select">
+      <%= form.select :category_id, Category.all.collect {|u| [u.title, u.id]} %>  
+    </div>
+  </div>
 
   <div class="field">
     <%= form.label :meal_type, class: "label" %>
@@ -29,6 +36,7 @@
     <%= form.label :proteins, class: "label" %>
     <%= form.number_field :proteins, class: "input" %>
   </div>
+  
 
   <div class="field">
     <%= form.label :carbohydrates, class: "label" %>
